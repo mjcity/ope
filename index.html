@@ -65,15 +65,15 @@
   <div class="wrap">
     <section class="glass hero">
       <div>
-        <h1>ðâ¨ Ope Creator HQ 2026</h1>
+        <h1>💄✨ Ope Creator HQ 2026</h1>
         <p><strong>Brand voice:</strong> God first, motherhood, intentional living, and real family moments with glam + confidence.</p>
         <p class="sub"><strong>Goal:</strong> Post 5x/week, track spend, and keep everything simple from one room setup.</p>
         <div>
           <span class="pill">Makeup</span><span class="pill">Clothes</span><span class="pill">Wigs</span><span class="pill">Mom Life</span><span class="pill">Mini Reviews</span>
         </div>
         <div class="social-row">
-          <a class="social-btn" href="https://www.instagram.com/openike/" target="_blank" rel="noopener noreferrer">ð¸ Instagram @openike</a>
-          <a class="social-btn" href="https://www.youtube.com/@opesfamily4586" target="_blank" rel="noopener noreferrer">â¶ï¸ YouTube @opesfamily4586</a>
+          <a class="social-btn" href="https://www.instagram.com/openike/" target="_blank" rel="noopener noreferrer">📸 Instagram @openike</a>
+          <a class="social-btn" href="https://www.youtube.com/@opesfamily4586" target="_blank" rel="noopener noreferrer">▶️ YouTube @opesfamily4586</a>
         </div>
       </div>
       <div class="hero-stats">
@@ -85,13 +85,13 @@
     </section>
 
     <section class="cards">
-      <article class="glass card"><h3><span class="icon">ð¯</span>Niche</h3><p><strong>Budget Glam in a Small Bedroom</strong></p><ul><li>Quick makeup tests</li><li>Outfit styling + mirror angle</li><li>Wig install + reveal</li><li>Keep or Return verdicts</li></ul></article>
-      <article class="glass card"><h3><span class="icon">ðï¸</span>Budget Rules</h3><ul><li>Cap: <strong>$60/month</strong></li><li>Return-friendly stores only</li><li>Keep one hero item monthly</li><li>Track deadlines in notes</li></ul></article>
-      <article class="glass card"><h3><span class="icon">ð </span>Bedroom Setup</h3><ul><li>Curtain/backdrop corner</li><li>Ring light + tripod</li><li>3 saved filming angles</li><li>To Film / Filmed / Return bins</li></ul></article>
+      <article class="glass card"><h3><span class="icon">🎯</span>Niche</h3><p><strong>Budget Glam in a Small Bedroom</strong></p><ul><li>Quick makeup tests</li><li>Outfit styling + mirror angle</li><li>Wig install + reveal</li><li>Keep or Return verdicts</li></ul></article>
+      <article class="glass card"><h3><span class="icon">🛍️</span>Budget Rules</h3><ul><li>Cap: <strong>$60/month</strong></li><li>Return-friendly stores only</li><li>Keep one hero item monthly</li><li>Track deadlines in notes</li></ul></article>
+      <article class="glass card"><h3><span class="icon">🏠</span>Bedroom Setup</h3><ul><li>Curtain/backdrop corner</li><li>Ring light + tripod</li><li>3 saved filming angles</li><li>To Film / Filmed / Return bins</li></ul></article>
     </section>
 
     <section class="glass planner">
-      <h2><span class="icon">ð</span>Interactive Calendar + Content Tracker</h2>
+      <h2><span class="icon">📅</span>Interactive Calendar + Content Tracker</h2>
       <p class="mini">Everything below stays functional: calendar, save day, spend tracking, camera/mic permission, uploads.</p>
       <div class="dashboard">
         <div class="stat"><div class="label">Posts This Month</div><div class="value" id="postsMonth">0</div></div>
@@ -101,9 +101,9 @@
       </div>
 
       <div class="calendar-head">
-        <button class="btn" id="prevMonth">â Prev</button>
+        <button class="btn" id="prevMonth">← Prev</button>
         <h3 id="monthTitle" style="margin:0;"></h3>
-        <button class="btn" id="nextMonth">Next â</button>
+        <button class="btn" id="nextMonth">Next →</button>
       </div>
       <div class="calendar-grid" id="calendarLabels"></div>
       <div class="calendar-grid" id="calendarGrid"></div>
@@ -111,9 +111,9 @@
       <div class="edit-row">
         <h3 id="selectedDateTitle">Select a date</h3>
         <div class="checks">
-          <label><input type="checkbox" id="didPost" /> â Posted</label>
-          <label><input type="checkbox" id="didFilm" /> ð¬ Filmed</label>
-          <label><input type="checkbox" id="didReturn" /> ð¦ Returned item</label>
+          <label><input type="checkbox" id="didPost" /> ✅ Posted</label>
+          <label><input type="checkbox" id="didFilm" /> 🎬 Filmed</label>
+          <label><input type="checkbox" id="didReturn" /> 📦 Returned item</label>
         </div>
         <label class="mini">Spend for this day ($)</label>
         <input class="input" id="spendInput" type="number" min="0" step="0.01" placeholder="0.00" />
@@ -148,7 +148,7 @@
       </div>
     </section>
 
-    <footer>Made with ð for Ope â redesigned, but fully functional.</footer>
+    <footer>Made with 💖 for Ope — redesigned, but fully functional.</footer>
   </div>
 
   <script>
@@ -173,7 +173,7 @@
     function renderMediaList(media=[]){ if(!media.length){ el.mediaList.innerHTML='<div class="mini">No uploads for this day yet.</div>'; return; } el.mediaList.innerHTML=""; media.forEach((item,i)=>{ const row=document.createElement("div"); row.className="media-item"; const preview=document.createElement("div"); preview.style.display="flex"; preview.style.alignItems="center"; preview.style.gap="10px";
       if((item.type||"").startsWith("image/")){ const img=document.createElement("img"); img.src=item.data; img.alt=item.name; preview.appendChild(img); }
       else if((item.type||"").startsWith("video/")){ const vid=document.createElement("video"); vid.src=item.data; vid.muted=true; preview.appendChild(vid); }
-      else { const badge=document.createElement("div"); badge.className="icon"; badge.textContent="ð"; preview.appendChild(badge); }
+      else { const badge=document.createElement("div"); badge.className="icon"; badge.textContent="📎"; preview.appendChild(badge); }
       const info=document.createElement("div"); info.innerHTML=`<div><strong>${item.name}</strong></div><div class="mini">${item.type||"file"}</div>`; preview.appendChild(info);
       const remove=document.createElement("button"); remove.className="remove-btn"; remove.type="button"; remove.textContent="Remove"; remove.addEventListener("click",()=>{ const entry=getEntry(state.selectedDateKey); entry.media=(entry.media||[]).filter((_,idx)=>idx!==i); state.data[state.selectedDateKey]=entry; saveState(); renderMediaList(entry.media); });
       row.appendChild(preview); row.appendChild(remove); el.mediaList.appendChild(row);

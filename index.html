@@ -187,15 +187,15 @@
     el.photoInput.addEventListener("change",e=>addFilesToDay(e.target.files)); el.videoInput.addEventListener("change",e=>addFilesToDay(e.target.files)); el.fileInput.addEventListener("change",e=>addFilesToDay(e.target.files));
 
     const igFeedData = [
-      { title: 'This is my very realistic Valentine Day as a mom of 4', url: 'https://www.instagram.com/openike/reel/DUwqX42jP3X/' },
-      { title: 'There’s just something about a red lip on Valentine’s Day', url: 'https://www.instagram.com/openike/reel/DUr4Mx5jbVH/' },
-      { title: 'Just vibe with whatever you love ❤️', url: 'https://www.instagram.com/openike/reel/DUZLqIvkmFp/' }
+      { title: 'This is my very realistic Valentine Day as a mom of 4', url: 'https://www.instagram.com/openike/reel/DUwqX42jP3X/', image: 'https://scontent-lga3-1.cdninstagram.com/v/t51.71878-15/628369702_934406792272958_5864159618741831069_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=skmzfd6awZsQ7kNvwH5e89M&_nc_oc=AdnRJe0xuyCpAUwgL1PZ0lNCOVBf5nRwg2iHmaS4wL8Wiy-0hTpdEAaxxCOn92daDCc&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=ayLdZuWpXZxJ9LKQ9lRYCQ&oh=00_AfsAXJidLNfyp-OjwsXe9YyvQRLKJsCX5wQhlFegg4y3_Q&oe=6998F174' },
+      { title: 'There’s just something about a red lip on Valentine’s Day', url: 'https://www.instagram.com/openike/reel/DUr4Mx5jbVH/', image: 'https://scontent-lga3-1.cdninstagram.com/v/t51.71878-15/632278180_1633742664300353_2126559716697415026_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=PB_iC-DniGcQ7kNvwFn0tv0&_nc_oc=AdkK00L1E0USgeiAmmSHLf8_opAbVFCaRRS73HxQZrPlccFDEbl6KN6Hlss95RW33Hg&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=2aW9wsb369Xa9ZsEbUQEFw&oh=00_Afs6vp13ojXER4cP0vpstt4-nTxIYW7_IlCT4wrMmvJdLQ&oe=6998D05B' },
+      { title: 'Just vibe with whatever you love ❤️', url: 'https://www.instagram.com/openike/reel/DUZLqIvkmFp/', image: 'https://scontent-lga3-1.cdninstagram.com/v/t51.71878-15/625056605_1414078890446401_4362267764966710824_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=OkaVnHhazfUQ7kNvwEvZCyu&_nc_oc=AdlQVD7XiG-mo0IEXx8qFXa8wxqwP6tuD8k4CAXVpwW2dwBFKDyTXeGDSSSJiowh5o8&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=-60MzKKM-4kqqpxTbv0Bhw&oh=00_Afs9ZlG9QGuLtYk01TY55orG_dAG1od5UUMqNCO2qA6VOQ&oe=6998C15C' }
     ];
     const igFeed = document.getElementById('igFeed');
     if (igFeed) {
       igFeed.innerHTML = igFeedData.map((item, i) => {
         const postUrl = item.url.replace(/\/$/, '');
-        const thumbUrl = `${postUrl}/media/?size=l`;
+        const thumbUrl = item.image || `${postUrl}/media/?size=l`;
         const bg = i===0?'linear-gradient(145deg,#84e1ff,#6fb9ff)':i===1?'linear-gradient(145deg,#ffa8c5,#ff8f76)':'linear-gradient(145deg,#b7f7ca,#8ee8ff)';
         return `
         <div style="border:1px solid rgba(30,62,122,.2);border-radius:18px;padding:12px;background:${bg};box-shadow:0 8px 20px rgba(27,52,101,.15)">

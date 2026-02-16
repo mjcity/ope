@@ -194,13 +194,17 @@
     const igFeed = document.getElementById('igFeed');
     if (igFeed) {
       igFeed.innerHTML = igFeedData.map((item, i) => {
-        const embedUrl = item.url.includes('/reel/') || item.url.includes('/p/') ? `${item.url.replace(/\/$/, '')}/embed` : null;
+        const postUrl = item.url.replace(/\/$/, '');
+        const thumbUrl = `${postUrl}/media/?size=l`;
         const bg = i===0?'linear-gradient(145deg,#84e1ff,#6fb9ff)':i===1?'linear-gradient(145deg,#ffa8c5,#ff8f76)':'linear-gradient(145deg,#b7f7ca,#8ee8ff)';
         return `
         <div style="border:1px solid rgba(30,62,122,.2);border-radius:18px;padding:12px;background:${bg};box-shadow:0 8px 20px rgba(27,52,101,.15)">
           <strong style="font-size:1.05rem;color:#0d2347;display:block;margin-bottom:8px;">${item.title}</strong>
-          ${embedUrl ? `<iframe src="${embedUrl}" style="width:100%;min-height:420px;border:0;border-radius:12px;background:#fff" allowtransparency="true" allowfullscreen="true"></iframe>` : ''}
-          <a href="${item.url}" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;text-decoration:none;color:#0d2347;font-weight:800;">Open on Instagram →</a>
+          <a href="${postUrl}" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;">
+            <img src="${thumbUrl}" alt="${item.title}" style="width:100%;min-height:240px;max-height:420px;object-fit:cover;border:0;border-radius:12px;background:rgba(255,255,255,.72)" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div style="display:none;min-height:240px;border-radius:12px;background:rgba(255,255,255,.55);place-items:center;font-weight:800;color:#163764;">Tap to view this reel on Instagram</div>
+          </a>
+          <a href="${postUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;text-decoration:none;color:#0d2347;font-weight:800;">Open on Instagram →</a>
         </div>`;
       }).join('');
     }
